@@ -1,16 +1,20 @@
-export class shadowDom extends HTMLElement {
+export class multiContentSlot extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
-    console.log("Shadow DOM");
+    console.log("content-slot");
   }
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `
       <section>
-        <h2>Shadow DOM</h2>
+        <h2>
+          <slot name="titulo"></slot>
+        </h2>
         <div>
-          <p>Shadow DOM</p>
+          <p>
+            <slot name="parrafo"></slot>
+          </p>
         </div>
       </section>
       ${this.getStyles()}
@@ -36,4 +40,4 @@ export class shadowDom extends HTMLElement {
     this.render();
   }
 }
-customElements.define("shadow-dom", shadowDom);
+customElements.define("multi-content-slot", multiContentSlot);
