@@ -1,4 +1,4 @@
-export class atributosElementos extends HTMLElement {
+export class attributeChangedCallback extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -40,4 +40,4 @@ export class atributosElementos extends HTMLElement {
     this.render();
   }
 }
-customElements.define("atributos-elementos", atributosElementos);
+customElements.define("attribute-changed-callback", attributeChangedCallback);
